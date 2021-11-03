@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title%} lifestyle {% endblock %}
+{% block body_block %}
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                    <h3 class="text-centre"> Technology</h3>
+                    {% for n in technology %}
+                  <a href="{{n.link}}"> <h5> -  {{n.text}} </h5> </a>
+                  <p> {{n.source}}</p>
+                    <hr>
+                    {% endfor %}
+                    <br>
+            </div>
+        </div>
+</div>
+{% endblock %}

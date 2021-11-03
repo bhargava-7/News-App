@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title%} lifestyle {% endblock %}
+{% block body_block %}
+    <div class="container">
+        <div class="row">
+            <div class="col-6" style="width: 50px;">
+                    <h3 class="text-centre"> Sports</h3>
+                    {% for n in sports %}
+                    
+                    {% if n.source == IndiaToday %}
+                    <h5 style="text-align:left;"> - <a href="{{n.link}}"> {{n.text}} </a>  </h5>
+                    <p style="text-align:left;">{{n.source}}</p>
+                    <hr>
+                    {%else%}
+                    {% endif%}
+                  
+                    {% endfor %}
+                   
+            </div>
+            <div class="col-6" style="padding-left:100px;">
+                <h3 class="text-centre"> Sports</h3>
+                {% for n in sports %}
+                
+                {% if n.source != IndiaToday %}
+                <h5 style="text-align:left;"> - <a href="#"> {{n.text}} </a>  </h5>
+                <p style="text-align:left;">{{n.source}}</p>
+                <hr>
+                {%else%}
+                
+                {% endif%}
+               
+                {% endfor %}
+                
+                <br>
+        </div>
+        </div>
+</div>
+{% endblock %}
